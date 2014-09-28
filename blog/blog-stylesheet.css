@@ -1,0 +1,138 @@
+*{
+  font-family: Arial;
+
+}
+body {
+  border: 2px solid black;
+  box-sizing: border-box;
+  background-color: white;
+}
+#wrapper {
+  width: 75%;
+  block: inline;
+  float: left;
+  padding: 0px;
+  border-right: 2px solid black;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover{
+  color: #63E779;
+}
+#outside-links a {
+  border-radius: 10px;
+  border: 1px white solid;
+  padding: 3px 6px 3px 6px;
+}
+#other-posts a{
+  border-radius: 10px;
+  border: 1px white solid;
+  padding: 3px 6px 3px 6px;
+}
+.side-bar {
+  width: 20%;
+  block: inline-block;
+  float: right;
+  font-family: Arial;
+  padding-right: 3%;
+  line-height: 2.5em;
+  background-color: #F38280;
+  position: relative;
+  top: 2px;
+  left: -19px;
+  right: -20px;
+
+}
+.side-bar ul {
+  list-style-type: none;
+  padding: 0px;
+}
+#share ul {
+  display: inline-block;
+  line-height: 1em;
+
+}
+#share li {
+  display: inline-block;
+  margin: 0 15px 0 15px;
+  text-align: center;
+}
+#twitter-icon{
+  padding: 15px 0px 0px 18%;
+}
+#git-icon{
+ padding-left: 33%;
+ padding-top: 10px;
+}
+#main-section h1 {
+  color: DarkBlue;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 0px;
+  padding-bottom: 1px;
+  font-family: Arial;
+  font-size: 3em;
+}
+#main-section h2 {
+  margin: 0px;
+  padding: 0px 0px 6px 0px;
+  font-family: Arial;
+}
+#main-section h3{
+  text-align: left;
+}
+#main-section h4 {
+  text-align: center;
+  margin: 0px 0px 6px 0px;
+  font-family: Arial;
+  font-size: 1.3em;
+  padding: 10px 0px 10px 0px;
+
+}
+#main-section p {
+  margin: 0px;
+  padding: 0px 15px 6px 0px;
+  line-height: 1.3em;
+  text-align: justify;
+}
+#main-section a {
+  color: #F38280;
+  text-decoration: underline;
+}
+#main-section ul{
+  list-style: square;
+  border-left: 1px solid #F38280;
+  padding-left: 40px;
+  margin-left: 40px
+}
+#main-section li {
+  padding: .8em
+}
+#main-section code{
+  font-family: Courier;
+  background-color: gray;
+  padding: 0px 8px 1px 8px;
+  margin: 1px;
+  color: #63E779;
+}
+br {
+  line-height: 2.5em;
+}
+#top-bar {
+  border-bottom: 2px solid black;
+  width: 100%;
+  height: 140px;
+  background-image: url(https://scontent-b.xx.fbcdn.net/hphotos-xpf1/t31.0-8/c0.103.851.315/p851x315/10631137_10103221725233609_1524591070904460671_o.jpg);
+  margin-top:-15px;
+}
+#other-posts li {
+  padding-left: 20px;
+  padding-top: 20px;
+}
+#outside-links li {
+  padding-left: 20px;
+
+}
