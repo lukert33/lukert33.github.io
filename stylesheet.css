@@ -57,12 +57,12 @@
 }
 .sidebar #locallinks{
   text-align: left;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 .sidebar #outlinks{
   text-align: right;
   padding-right: 10px;
-  padding-top: 20px;
+  padding-top: 10px;
   width: 100%;
   margin-left: -10px;
 }
@@ -159,6 +159,7 @@ code{
 }
 #main-section h3{
   text-align: left;
+  display: inline;
 }
 #main-section h4 {
   text-align: center;

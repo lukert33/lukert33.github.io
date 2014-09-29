@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>CSS:id and class</title>
+  </head>
+  <body>
+    <div class="body-wrap">
+    <div class="topbar"></div>
+        <div id="main-section">
+          <h1>Selector Refinement</h1>
+          <h4>September 28, 2014</h4>
+          <h2>On class and id in modern CSS</h2>
+          <h2>Sounds Like: <a href="https://www.youtube.com/watch?v=zlxH9-TYseY">Heartbreak</a></h2>
+          <br>
+          <p><b>CSS selectors</b> are what you use to specify style characteristics in CSS. In <code>h1{color: beige;}</code> <b>h1</b> is the selector. We are selecting the heading-1 <b>tag</b> in order to bestow some some smokin' hot beige.
+          </p>
+          <p>When you are writing a webpage using html and CSS, you quickly realize that you will need to treat two different instances of the same tag in different ways. The unordered list of vocabulary below, for instance, shows off its square bullets. The unordered list in my sidebar, however, hides them. In both cases I called on certain html functionality with the tag <code>&lt;ul&gt;</code>.d So how do I tell your browser to render them differently? I do so using <code>class=""</code> and <code>id=""</code>. These are "selectors," both of which are more specific than a tag selector like <code>&lt;ul&gt;</code>. Let's go ahead and lay out the vocabulary I mentioned a moment ago:</p>
+
+
+            <h4>Vocabulary</h4>
+            <ul>
+                <li><b>tag</b> - an html element with built-in behavior. Head, body, heading, img, div, article, ordered list...they're all tags.</li>
+
+                <li><b>class</b> - one step more specific than tag. You specify a class selector on a tag when you will have several elements in your site that need to have the same style attributes. When I write <code>&lt;ul class="bulleted"&gt;&lt;/ul&gt;</code> I am adding an unordered list for which I intend to display bullets. I'll have other unordered lists where I hide them, and several instances of both over my whole site. </li>
+
+                <li><b>id</b> - one step more specific than class. Use an id when you are only going to apply a style to one specific instance of am html tag. In <code>&lt;ul id="shark-bullets"&gt;&lt;/ul&gt;</code> I am adding the one unordered list I will have on the site that features animated chompy shark GIFS for bullets.</li>
+
+            </ul>
+
+            <p>So as you can see, all of these are selectors. You should treat id as more specific than class and class as more specific than tag. Html elements will all inherently have a tag selector. You can also add as many class selectors or id selectors as you need. <code>&lt;ul class="horizontal" id="shark-bullets"&gt;&lt;/ul&gt;</code> imports styling that I'll use elsewhere on my site to make that chompy shark list render horizontally, rather than the default of vertical.</p>
+
+            <p>Selectors are by definition NOT mutually exclusive. The &lt;ul&gt; tag passes down all of the style characteristics to <code>&lt;ul class="horizontal" id="shark-bullets"&gt;&lt;/ul&gt;</code>. That shark bullet list, however, has the authority to override any characteristics of a default unordered list that you specify with your CSS selector definition in <code>.horizontal{display:inline;}</code> and <code>#shark-bullets{list-style-image:chompy_shark.gif;}</code></p>
+
+            <p>It's important to note that when a user's browser renders your website, it will give priority to the most specific selector. The most specific selector should be on the right, closest to the style parameters being passed to it. So when you have a large class and a more specific subclass within that, you should write it like so: <code>.top-bar .horizontal-list{background-color:fuschia;}</code> because while there are several top-bar elements we are applying position styling so, there is only one specific element we want to color fuschia. When you have an element with an id, there should only be one of them on your whole site. So that means that you should only call the id in your CSS, as in <code>#shark-bullets{list-style-image:chompy_shark.gif;}</code>. You can have multiple elements that have the same id, and a browser will render them with the CSS style applied to that id, but if you do that, you should be creating a class rather than an id, for purposes of readability, and until 2011, rendering efficiency.</p>
+
+            <p>That's the simple truth of the <code>tag</code> > <code>class</code> > <code>id</code> hierarchy. They keep your stylesheet clean, and allow others to read your code and competently apply your style.</p>
+
+
+          <!--<h2>Section Heading</h2>
+          <p>body text</p>-->
+        </div>
+    </div>
+    <div class="sidebar">
+    <div id="share">
+      <ul>
+        <li id="git-icon"><a href="https://github.com/lukert33"><img src="GitHub-Mark-Light-64px.png"></a></li>
+        <li id="twitter-icon"><a href="https://twitter.com/LRRthomas" class="twitter-follow-button" data-show-count="false">Follow @LRRthomas</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+      </ul>
+    </div>
+    <div id="locallinks">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about_me.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="c1-chefs-kitchen.html">On DBC Culture</a></li>
+        <li><a href="t1-git-blog.html">On Code Technique</a></li>
+      </ul>
+    </div>
+    <div id="outlinks">
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=sSEABp9kyds">Some Auden</a></</li>
+        <li><a href="https://www.youtube.com/watch?v=qpuzIoso-44">Some Eliot</a></li>
+        <li><a href="https://www.youtube.com/watch?v=TmIT0RFmwYA">Quite a bit of Browning</a></li>
+      </ul>
+    </div>
+  </div>
+     <div class="footer">
+        <a href="mailto:lukert33@gmail.com">Contact Me</a>
+    </div>
+  </body>
+</html>
