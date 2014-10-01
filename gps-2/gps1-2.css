@@ -1,0 +1,46 @@
+/* include your css here */
+*{
+  border: 1px solid blue;
+}
+div.header{background-color: gold;
+  width: 100%;
+  height: 150px;
+  display: block;
+}
+div h1{
+  text-align: center;
+  font-size: 75px;
+}
+.title{
+  text-align: center;
+}
+.content{width: 60%;
+  display: inline-block;
+}
+h2{
+  font-size: 2.5em;
+}
+h4{
+  font-size: 1.6em;
+  margin-bottom: 5px;
+}
+p{
+  margin-top: 0px;
+  font-size: 1.7em;
+}
+#cheesy-img{
+  display: inline-block;
+  max-width: 39%;
+
+}
+#cheesy-img img{
+  max-width: 100%;
+  max-height: 60%;
+  width: auto;
+  height: auto;
+  margin-bottom: 440px;
+  margin-top: 30px;
+  display: inline;
+  border: 3px solid gold;
+  position: relative;
+}
