@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../stylesheet.css"/>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>Array vs Hash</title>
+  </head>
+  <body>
+    <div class="body-wrap">
+    <div class="topbar"></div>
+        <div id="main-section">
+          <h1>Arrays vs Hashes</h1>
+          <h4>October 3, 2014</h4>
+          <h2>How to Choose the Right Data Structure</h2>
+
+          <h3>What's an Array?</h3>
+          <p>
+            An array is the default data structure that you'll use in Ruby. It's a collection of objects, with each object automatically assigned a numbered index slot in the array. That it's a collection of objects isn't unique. Hashes are also collections, and in Ruby you can add any possible object to either a Hash or an Array.
+          </p>
+          <p>What's unique about <b>Arrays</b> are those <b>index</b> slots. Every item in the array is assigned a number that identifies its index position, and the index remains attached to the item until you do something to change that. So in this array: <code>new_array = ["cat", "carrot", 6]</code> the string "carrot" is assigned to the second index. Because indexing in arrays starts at 0, you can call the carrot with <code>new_array[1]</code> or <code>new_array[-1]</code> And that leads us to the characteristic of Arrays that makes them the data structure of choice. Because of that automatic numerical indexing, Arrays have far more ways of being manipulated than Hashes. Because you know there is always a reliable index system, you can call on specific pieces and portions of the array, you can reassign items to indexes based on any criteria you imagine, and use that as a sorting technique. Essentially, an Array has all the power of mathematical principles on its side when it comes to determining how it is arranged.</p>
+          <p>Sexy...I know. So what do Hashes have to say for themselves?</p>
+            <!--<h>Vocabulary</h4>
+            <ul>
+                <li></li>
+            </ul> -->
+            <h3>What's a Hash?</h3>
+
+          <p>A hash differs from an array in that there is no built-in <b>index</b>. Lacking that, Hashes cannot access the many functions that Arrays leverge due to their automatic numerical slots. If you need to call every other object in your data structure, or every eleventh, use an array. That would be
+            <code>new_array.each do |elevensies|
+              next if index(elevensies) % 11 != 0
+                 #do what you want to every 11th item
+              end</code>
+          So, why ever use a Hash if you leave all that mathematical power behind? Well, you use it specifically when it's more useful to assign non-numerical indexes to the content of the array. In Hashes, the function of indexes is replaced by <b>keys</b>. When you build the Hash, you decide what each key is going to be. It's useful to think of Hashes as dictionaries. It's almost pointless to arrange a dictionary numerically--you don't say "Alaska" is the 90th entry in the dictionary, you say it's somewhere between "Aardvark" and "Apricot." Here's an example of a Hash construction:
+          </p>
+          <code>new_hash = {
+            :key => "value"
+            :key_orange => "an orange value"
+            :key_purple => "probably purple"
+            :key_velvet => "a velvet value"
+          }
+          </code>
+          <p>So to return "a velvet value" in new_hash, you call <code>new_hash[:key_velvet]</code> As you can see, the format for calling the item by a key is the same as calling something by index in an array, e.g. <code>new_array[1]</code> </p>
+          <p>You use a Hash when it's more useful to apply a qualitative key that will always be affiliated with the object you assign it to (called the "value" assigned to the key). You give up the mathematical power of arrays, but the point of doing so is that the situation makes a descriptive key better. In a dictionary, you'd rather say that <code>dictionary["Aardvark"]</code> is <code>"a nocturnal burrowing mammal with long ears, a tubular snout, and a long extensible tongue, feeding on ants and termites."</code> Rather than assigning that definition to <code>dictionary[24]</code></p>
+          <h3>Hash versus Array</h3>
+          <p>It comes down to whether you'd rather have a numerical index assigned to the objects in your data collection, or a more specific, qualatiative key. Because the numerical nature of indexes makes it easy to apply math to an Array, Arrays are the more common structure. Yet Hashes are indispensable in situations where math is simply beside the point.</p>
+          <p></p>
+
+          <!--<h2>Section Heading</h2>
+          <p>body text</p>-->
+        </div>
+    </div>
+    <div class="sidebar">
+    <div id="share">
+      <ul>
+        <li id="git-icon"><a href="https://github.com/lukert33"><img src="GitHub-Mark-Light-64px.png"></a></li>
+        <li id="twitter-icon"><a href="https://twitter.com/LRRthomas" class="twitter-follow-button" data-show-count="false">Follow @LRRthomas</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+      </ul>
+    </div>
+    <div id="locallinks">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about_me.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="c1-chefs-kitchen.html">On DBC Culture</a></li>
+        <li><a href="t1-git-blog.html">On Code Technique</a></li>
+      </ul>
+    </div>
+    <div id="outlinks">
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=sSEABp9kyds">Some Auden</a></</li>
+        <li><a href="https://www.youtube.com/watch?v=qpuzIoso-44">Some Eliot</a></li>
+        <li><a href="https://www.youtube.com/watch?v=TmIT0RFmwYA">Quite a bit of Browning</a></li>
+      </ul>
+    </div>
+  </div>
+     <div class="footer">
+        <a href="mailto:lukert33@gmail.com">Contact Me</a>
+    </div>
+  </body>
+</html>
