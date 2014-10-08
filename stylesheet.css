@@ -26,7 +26,9 @@
 }
 .sidebar ul {
   list-style: none;
-  display: inline;
+display: inline-block;
+position: fixed;
+top: 0px;
 }
 .sidebar a {
   color: #5CE62E;
@@ -71,6 +73,9 @@ margin: 0 10px;
   height: 50px;
   display: inline;
 }
+#twitter-icon {
+  margin-bottom:;
+}
 .sidebar #locallinks{
   text-align: left;
   padding-top: 10px;
@@ -78,17 +83,22 @@ margin: 0 10px;
 }
 #locallinks ul {
   position: relative;
-top: -40px;
-left: 22%;
+left: 42%;
+top: -20px;
 }
-#poem-list {
- display: none;
+nav ul ul {
+  display: none;
 }
 
-#poem-list li:hover{ /**this is not working yet!**/
+nav ul ul li:hover {
+    display: block;
+
+}
+
+:hover{ /**this is not working yet!
   display: block;
   background-color: gold;
-  border: 2px solid white;
+  border: 2px solid white;**/
 }
 .sidebar li{
   line-height: 2em;
@@ -175,8 +185,9 @@ code br {
 
 /* begin blog formatting*/
 #main-section{
-  width: 76%;
+  width: 80%;
   padding: 0 15px 40px 15px;
+  margin: 0 auto 40px auto;
 }
 #main-section h1 {
   color: rgb(148, 194, 69);
@@ -208,7 +219,7 @@ code br {
 }
 #main-section p {
   margin: 0px;
-  padding: 0px 15px 6px 0px;
+  padding: 5px 15px 20px 0px;
   line-height: 1.3em;
   text-align: justify;
 }
@@ -224,6 +235,19 @@ code br {
 }
 #main-section li {
   padding: .8em
+}
+#main-section table {
+  border: 1px solid black;
+}
+#main-section th {
+  background-color: #A1A1BC;
+  color: #FFFF19;
+  border: 1px solid black;
+  padding: 4px 12px 0px 12px;
+}
+#main-section td {
+  border: 1px solid black;
+  padding: 2px 4px 2px 4px;
 }
 
 br {
