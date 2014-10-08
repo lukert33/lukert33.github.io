@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../stylesheet.css"/>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>Enumerable and #cycle</title>
+  </head>
+  <body>
+    <div class="body-wrap">
+    <div class="topbar"></div>
+        <div id="main-section">
+          <h1>Enumerable and Enumerator</h1>
+          <h4>October 8, 2014</h4>
+          <h2>and the Cycle Method, in Ruby 2.0</h2>
+
+          Here I'll discuss the general way the Enumerable module works, and how you can use one of its many methods, cycle, to iterate over your data.
+
+            <h>Vocabulary</h4>
+            <ul>
+                <li>module - a package of methods and constants that a class can have access to without inheriting from a parent class. Basically modules are packages that are so useful that any given class might have a use for them. </li>
+
+                <li>Enumerable - a module that can be applied to any class with an <code>#each</code> method. </li>
+
+                <li> #each - a method that iterates over each element in a collection. This implies that the elements in the collection are seperated in some way that the computer can understand, whether by whitespace or, more commmonly, by being parcelled out into arrays or hashes.</li>
+
+                <li> Enumerator - a class, as opposed to Enumerable which is a module. An enumerator is produced implicitly when you call an iterative method on a collection. It's what your method iterates over. It can also be produced as a more static object, and stored, as a variable, with #to_enum. So <code>["a","b","c"].to_enum</code> produces <code>#&lt;Enumerator: [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]:each&gt;</code></li>
+
+                <li>#cycle - an iterative method that can move through each element of a collection and perform a block of code on it. We'll discuss cycle in detail below. </li>
+
+            </ul>
+
+            <h4>#cycle</h4>
+            <p>Enumerable comes with 95 built-in methods in Ruby 2.0. Cycle is just one of these, but it's among the most commonly used. Usually, when you use cicle, you will use it in conjunction with code that you want to perform during the cycle. That said, you can use cycle without additional code. Let's start there, because it demonstrates what cycle and other Enumerable methods do when you call them.</p>
+            <p>Let's start with an array, <code>arr = ["John","Jacob","Jingleheimer","Schmidt"]</code>. Now, let's have a look at what is returned if we call #cycle on that array, with no arguments and no code block passed to it:</p>
+            <code>arr.cycle
+              #=&gt; &lt;Enumerator: [&quot;John&quot;, &quot;Jacob&quot;, &quot;Jingleheimer&quot;, &quot;Schmidt&quot;]:cycle&gt;</code>
+            <p>What's returned here is an Enumerator. This is a class of object that Ruby uses to iterate through each item in the Enumerator. This one contains all the elements in <code>arr</code>, and also has the :cycle method attached at the end. #cycle is what this Enumerator is set up to do. To demonstrate, let's store that same Enumerator as a variable and call a simple <code>next</code> method on it:</p>
+            <code>
+              enum = arr.cycle
+              enum.next
+              <code class="return">#=>"John"</code>
+              enum.next
+              <code class="return">#=>"Jacob"</code>
+              enum.next
+              <code class="return">#=>"Jingleheimer"</code>
+              enum.next
+              <code class="return">#=>"Schmidt"</code>
+              enum.next
+              <code class="return">#=>"John"</code>
+              enum.next
+              <code class="return">#=>"Jacob"</code>
+            </code>
+            <p>Because we didn't pass an argument to cycle, it will keep iterating infinitely. I can call that #next method all day and it will keep stepping through the Enumerator <code>enum</code> that I declared. We can limit those cycle by passing a number as an argument, which specifies how many cycles we want to attach to the Enumerator:</p>
+            <code>
+              enum_two = arr.cycle(2)
+              enum_two.next
+              <code class="return">#=>"John"</code>
+              enum_two.next
+              <code class="return">#=>"Jacob"</code>
+              enum_two.next
+              <code class="return">#=>"Jingleheimer"</code>
+              enum_two.next
+              <code class="return">#=>"Schmidt"</code>
+              enum_two.next
+              <code class="return">#=>"John"</code>
+              enum_two.next
+              <code class="return">#=>"Jacob"</code>
+              enum_two.next
+              <code class="return">#=>"Jingleheimer"</code>
+              enum_two.next
+              <code class="return">#=>"Schmidt"</code>
+              enum_two.next
+              <code class="return">StopIteration: iteration reached an end</code>
+            </code>
+            <p>As you can see, the StopIteration message is pretty direct. So, when you pass an argument to cycle it should be a number. Fixnum or Floats will do, but Floats will only act differently than integers if you have a weird data collection that is divisible by floats...I'm hard pressed to think of an example. This dictates the number of cycles built into the Enumerator returned by the #cycle call.</p>
+
+            <h4>Cycling with a Code Block</h4>
+            <p>Now that we understand the fundamentals of cycle, let's move to a way it is commonly used, by passing both an argument and a block of code:</p>
+            <code>
+              arr.cycle(2) {|name|puts name+"!!"}
+              <code class=return>
+              John!!
+              Jacob!!
+              Jingleheimer!!
+              Schmidt!!
+              John!!
+              Jacob!!
+              Jingleheimer!!
+              Schmidt!!
+              nil
+            </code>
+            </code>
+            <p>Here we see the iteration happening, with cycle treating each element in the Enumerator as <code>|name|</code> and <code>putsing</code> it with <code>"!!"</code> The only surprise here is the <code>nil</code> return at the end. That's what cycle does when it finishes the loop over the Enumerator without being interrupted. You can use that nil to determine if a cycle is working properly.</p>
+            <p>There you have it: #cycle. Consider opening IRB and trying this command:</p>
+            <code>
+              [" ",remember,","to","escape,","use","ctr+c"].cycle {|x| puts x}
+            </code>
+
+          <!--<h2>Section Heading</h2>
+          <p>body text</p>-->
+        </div>
+    </div>
+    <div class="sidebar">
+    <div id="share">
+      <ul>
+        <li id="git-icon"><a href="https://github.com/lukert33"><img src="GitHub-Mark-Light-64px.png"></a></li>
+        <li id="twitter-icon"><a href="https://twitter.com/LRRthomas" class="twitter-follow-button" data-show-count="false">Follow @LRRthomas</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+      </ul>
+    </div>
+    <div id="locallinks">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about_me.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="c1-chefs-kitchen.html">On DBC Culture</a></li>
+        <li><a href="t1-git-blog.html">On Code Technique</a></li>
+      </ul>
+    </div>
+    <div id="outlinks">
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=sSEABp9kyds">Some Auden</a></</li>
+        <li><a href="https://www.youtube.com/watch?v=qpuzIoso-44">Some Eliot</a></li>
+        <li><a href="https://www.youtube.com/watch?v=TmIT0RFmwYA">Quite a bit of Browning</a></li>
+      </ul>
+    </div>
+  </div>
+     <div class="footer">
+        <a href="mailto:lukert33@gmail.com">Contact Me</a>
+    </div>
+  </body>
+</html>
