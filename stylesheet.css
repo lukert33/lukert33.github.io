@@ -122,15 +122,21 @@ p {
   padding: 0px 20px 10px 20px;
   margin-top: -10px;
 }
-code{
+code {
   font-family: Courier;
-  background-color: gray;
-  padding: 0px 8px 1px 8px;
-  margin: 1px;
-  color: #63E779;
+  background-color: #A1A1BC;
+  padding: 4px 6px 4px 6px;
+  margin: 0 2px 0 2px;
+  color: #5CE62E;
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1em;
 }
-code .return {
-  color: #D0E763;
+code.return {
+  color: #FFFF19;
+}
+code br {
+  line-height: 1.3em;
 }
 .body-wrap{
   margin: -8px 0px 0px -8px;
@@ -186,6 +192,7 @@ code .return {
   margin: 0px;
   padding: 0px 0px 6px 0px;
   font-family: Helvetica;
+  text-align: center;
 }
 #main-section h3{
   text-align: left;
@@ -218,13 +225,7 @@ code .return {
 #main-section li {
   padding: .8em
 }
-#main-section code{
-  font-family: Courier;
-  background-color: gray;
-  padding: 0px 8px 1px 8px;
-  margin: 1px;
-  color: #63E779;
-}
+
 br {
   line-height: 2.5em;
 }
