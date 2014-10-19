@@ -11,11 +11,11 @@
           <h1>Ruby: The Class Object</h1>
           <h4>October 19, 2014</h4>
           <h2>Designing and Modifying Classes</h2>
-          <img src="gregorc_thinkingstylegraph.png">
           <h3>My ToDoList Class</h3>
           <p>For this exercise I'm going to create a new class of Ruby object, the ToDoList.</p>
-          <code>class ToDoList
-
+          <code>
+            class ToDoList<br>
+               <br>
             end</code>
             <p>There are two preliminary questions to ask when you are populating your class:</p>
             <ul>
@@ -26,65 +26,66 @@
             <p>Let's start with the first issue. What happens when we create a new object of the class with <code>ToDoList.new</code>? For this you open up a special method called "initialize," which allows you to manipulate what happens when an instance of the class is created.</p>
 
             <code>
-              class ToDoList
-
-                def initialize(title="untitled")
-                  @born_on = Time.new
-                  if title == "untitled"
-                    @title = "untitled, #{@born_on.month}/#{@born_on.day}"
-                  else @title = title
-                  end
-                end
-
+              class ToDoList <br>
+                <br>
+                def initialize(title="untitled")<br>
+                  @born_on = Time.new<br>
+                  if title == "untitled"<br>
+                    @title = "untitled, #{@born_on.month}/#{@born_on.day}"<br>
+                  else @title = title<br>
+                  end<br>
+                end<br>
+              <br>
               end
             </code>
             <p>A ToDoList is for organization. Therefore you want to provide it with some self-organizing information. When a new ToDoList object is created, it will either accept a title as an argument, like <code>ToDoList.new("shopping list")</code> or it will call itself untitled, with info about the day and month it was created. So today a new list I create without passing it a title would be <code>@title = "untitled, 10/19"</code>. To generate that title, the object has already made use of the first instance variable we gave it, a new Time object called @born_on.</p>
             <p><code>@born_on</code> is a great example of an <b>instance variable</b>. Instance variables can be used by any method you design within the class, and are especially good at tracking information that you want the object to keep tabs on even when a variety of methods have been applied. Many variables in Ruby are essentially created and discarded in the course of a given method's run. Instance variables are used in more persistent ways. </p>
             <p>Let's go ahead and build methods for adding tasks to our list, and for crossing them off it:</p>
             <code>
-              class ToDoList
-
-                def initialize(title="untitled")
-                  @born_on = Time.new
-                  @tasks = []
-                  if title == "untitled"
-                    @title = "untitled, #{@born_on.month}/#{@born_on.day}"
-                  else @title = title
-                  end
-                end
-
-                def new_task(task)
-                  @tasks << task.to_s
-                end
-
-                def finished(task)
-                  p "Done with #{task}!"
-                  @tasks.delete(task)
-                end
+              class ToDoList<br>
+               <br>
+                def initialize(title="untitled")<br>
+                  @born_on = Time.new<br>
+                  @tasks = []<br>
+                  if title == "untitled"<br>
+                    @title = "untitled, #{@born_on.month}/#{@born_on.day}"<br>
+                  else @title = title<br>
+                  end<br>
+                end<br>
+                  <br>
+                def new_task(task)<br>
+                  @tasks << task.to_s<br>
+                end<br>
+                <br>
+                def finished(task)<br>
+                  p "Done with #{task}!"<br>
+                  @tasks.delete(task)<br>
+                end<br>
+                <br>
               end
             </code>
             <p>Now we have a new_task method that takes a task and pushes it into an instance variable, @tasks, that I added to the initialize method. Note that I <i>could</i> have created the @tasks list in the new_task method, but it makes more sense to create it at the creation of the list. Among them: creating it as a new empty array in new_task would have the effect of overwriting the list instead of adding to it.</p>
             <p>So far our class looks pretty good. We can add items to a list, we can take them away (and get a satisfying message when we do so!)...but wait a minute, we can't yet view the whole list of things to do.</p>
             <p>Here is where we get to a nice shorthand way that Ruby gives you for managing instance variables in your classes. If we want to display the array of tasks, we could write this method:</p>
             <code>
-              def show_list
-                @tasks
+              def show_list<br>
+                @tasks<br>
               end
             </code>
             <p>Because it is so common to want to check in on instance variables, however, Ruby has a shorthand way to auto-build methods for three kinds of instance variables. In this case, we want to only return @tasks, so we want to declare @tasks to be a <b>reader</b> attribute. This means that Ruby will automatically build a method to return @tasks when we call it on our ToDoList object. This really saves time and space when you have a class with, say, two dozen isntance variables that you want to read.</p>
             <code>
-              class ToDoList
-                attr_reader :tasks   #maybe in the future, this will look like:
-               #attr_reader :tasks, :finished_tasks, :high_priority
-
-                def initialize(title="untitled")
-                  @born_on = Time.new
-                  [...]
+              class ToDoList<br>
+                attr_reader :tasks   #maybe in the future, this will look like:<br>
+               #attr_reader :tasks, :finished_tasks, :high_priority<br>
+                 <br>
+                def initialize(title="untitled")<br>
+                  @born_on = Time.new<br>
+                  #and so on...
             </code>
             <p>You can see we used symbol notation, <code>:</code> to name on the @tasks variable as a readable attribute. Now, from outside the class, we can simply call the @tasks array by calling its name as a method:</p>
             <code>
-              list = ToDoList.new
-              list.new_task("blog")
+              list = ToDoList.new<br>
+              list.new_task("blog")<br>
               p list.tasks     <code class="return">#=>["blog"]</code>
             </code>
             <p>It's true that we could create a more fancy display method to show our list off, but it might also be the case that we'd want to create that <code>display_array_fancy(my_array)</code> method outside of the class. Sometimes you want to display lists of things other than the chores you've yet to do, after all.</p>
