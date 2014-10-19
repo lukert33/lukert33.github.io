@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../stylesheet.css"/>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>Class in Ruby</title>
+  </head>
+  <body>
+    <div class="body-wrap">
+    <div class="topbar"></div>
+        <div id="main-section">
+          <h1>Ruby: The Class Object</h1>
+          <h4>October 19, 2014</h4>
+          <h2>Designing and Modifying Classes</h2>
+          <img src="gregorc_thinkingstylegraph.png">
+          <h3>My ToDoList Class</h3>
+          <p>For this exercise I'm going to create a new class of Ruby object, the ToDoList.</p>
+          <code>class ToDoList
+
+            end</code>
+            <p>There are two preliminary questions to ask when you are populating your class:</p>
+            <ul>
+              <li>When I make a new instance of this class, what attributes should come built-in?</li>
+              <li>When I'm designing methods to call on the class, should they be contained in it, or are they useful to other objects, like arrays and strings, not of this class?</li>
+            </ul>
+
+            <p>Let's start with the first issue. What happens when we create a new object of the class with <code>ToDoList.new</code>? For this you open up a special method called "initialize," which allows you to manipulate what happens when an instance of the class is created.</p>
+
+            <code>
+              class ToDoList
+
+                def initialize(title="untitled")
+                  @born_on = Time.new
+                  if title == "untitled"
+                    @title = "untitled, #{@born_on.month}/#{@born_on.day}"
+                  else @title = title
+                  end
+                end
+
+              end
+            </code>
+            <p>A ToDoList is for organization. Therefore you want to provide it with some self-organizing information. When a new ToDoList object is created, it will either accept a title as an argument, like <code>ToDoList.new("shopping list")</code> or it will call itself untitled, with info about the day and month it was created. So today a new list I create without passing it a title would be <code>@title = "untitled, 10/19"</code>. To generate that title, the object has already made use of the first instance variable we gave it, a new Time object called @born_on.</p>
+            <p><code>@born_on</code> is a great example of an <b>instance variable</b>. Instance variables can be used by any method you design within the class, and are especially good at tracking information that you want the object to keep tabs on even when a variety of methods have been applied. Many variables in Ruby are essentially created and discarded in the course of a given method's run. Instance variables are used in more persistent ways. </p>
+            <p>Let's go ahead and build methods for adding tasks to our list, and for crossing them off it:</p>
+            <code>
+              class ToDoList
+
+                def initialize(title="untitled")
+                  @born_on = Time.new
+                  @tasks = []
+                  if title == "untitled"
+                    @title = "untitled, #{@born_on.month}/#{@born_on.day}"
+                  else @title = title
+                  end
+                end
+
+                def new_task(task)
+                  @tasks << task.to_s
+                end
+
+                def finished(task)
+                  p "Done with #{task}!"
+                  @tasks.delete(task)
+                end
+              end
+            </code>
+            <p>Now we have a new_task method that takes a task and pushes it into an instance variable, @tasks, that I added to the initialize method. Note that I <i>could</i> have created the @tasks list in the new_task method, but it makes more sense to create it at the creation of the list. Among them: creating it as a new empty array in new_task would have the effect of overwriting the list instead of adding to it.</p>
+            <p>So far our class looks pretty good. We can add items to a list, we can take them away (and get a satisfying message when we do so!)...but wait a minute, we can't yet view the whole list of things to do.</p>
+            <p>Here is where we get to a nice shorthand way that Ruby gives you for managing instance variables in your classes. If we want to display the array of tasks, we could write this method:</p>
+            <code>
+              def show_list
+                @tasks
+              end
+            </code>
+            <p>Because it is so common to want to check in on instance variables, however, Ruby has a shorthand way to auto-build methods for three kinds of instance variables. In this case, we want to only return @tasks, so we want to declare @tasks to be a <b>reader</b> attribute. This means that Ruby will automatically build a method to return @tasks when we call it on our ToDoList object. This really saves time and space when you have a class with, say, two dozen isntance variables that you want to read.</p>
+            <code>
+              class ToDoList
+                attr_reader :tasks   #maybe in the future, this will look like:
+               #attr_reader :tasks, :finished_tasks, :high_priority
+
+                def initialize(title="untitled")
+                  @born_on = Time.new
+                  [...]
+            </code>
+            <p>You can see we used symbol notation, <code>:</code> to name on the @tasks variable as a readable attribute. Now, from outside the class, we can simply call the @tasks array by calling its name as a method:</p>
+            <code>
+              list = ToDoList.new
+              list.new_task("blog")
+              p list.tasks     <code class="return">#=>["blog"]</code>
+            </code>
+            <p>It's true that we could create a more fancy display method to show our list off, but it might also be the case that we'd want to create that <code>display_array_fancy(my_array)</code> method outside of the class. Sometimes you want to display lists of things other than the chores you've yet to do, after all.</p>
+            <p>For our ToDoList, we want to limit the access to the list of @tasks. So we wouldn't want to allow writeability on top of the readability we enable with <code>attr_reader</code>. The only way we want to "write" tasks is to add them to the end of our @tasks array, with the custom-built new_task method.</p>
+            <p>Ruby does provide similar shortcuts for instance variables for which you want to autobuild writer methods, e.g. <code>list.tasks=("this would become the only task")</code>, and those for which you want reader and writer methods. The first is <code>attr_writer</code> and the second is <code>attr_accessor</code>. Can you think of a different class of object for which you'd want to read and write a bunch of different variables? Try building a tic-tac-toe board, with each of the nine squares as an instance variable.</p>
+            <p></p>
+
+
+            <!-- <h>Vocabulary</h4>
+            <ul>
+                <li></li>
+
+                <li> </li>
+
+                <li> </li>
+
+                <li> </li>
+
+                <li> </li>
+
+                <li> </li>
+
+                <li> </li>
+
+            </ul> -->
+
+
+
+          <!--<h2>Section Heading</h2>
+          <p>body text</p>-->
+        </div>
+    </div>
+    <div class="sidebar">
+    <div id="share">
+      <ul>
+        <li id="git-icon"><a href="https://github.com/lukert33"><img src="GitHub-Mark-Light-64px.png"></a></li>
+        <li id="twitter-icon"><a href="https://twitter.com/LRRthomas" class="twitter-follow-button" data-show-count="false">Follow @LRRthomas</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+      </ul>
+    </div>
+    <div id="locallinks">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about_me.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="c3-tech-issues.html">On Tech Demographics</a></li>
+        <li><a href="t4-enumerable-methods.html">The Enumberable Module</a></li>
+      </ul>
+    </div>
+    <div id="outlinks">
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=sSEABp9kyds">Some Auden</a></</li>
+        <li><a href="https://www.youtube.com/watch?v=qpuzIoso-44">Some Eliot</a></li>
+        <li><a href="https://www.youtube.com/watch?v=TmIT0RFmwYA">Quite a bit of Browning</a></li>
+      </ul>
+    </div>
+  </div>
+     <div class="footer">
+        <a href="mailto:lukert33@gmail.com">Contact Me</a>
+    </div>
+  </body>
+</html>

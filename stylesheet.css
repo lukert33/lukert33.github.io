@@ -143,7 +143,7 @@ code {
   line-height: 1em;
 }
 code.return {
-  color: #FFFF19;
+  color: #ffd919; /*darker yellow than main*/
 }
 code br {
   line-height: 1.3em;
