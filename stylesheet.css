@@ -254,9 +254,9 @@ br {
   line-height: 2.5em;
 }
 #pac_rim{
-  min-width: 100px;
-  min-height: 100px;
-  display: block;
-  margin: 0 auto 0 auto;
+min-width: 200px;
+min-height: 150px;
+display: block;
+margin: 0 auto 0 auto;
 }
 /*end blog formatting*/
