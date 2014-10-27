@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../stylesheet.css"/>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>Variable Scope in Ruby</title>
+  </head>
+  <body>
+    <div class="body-wrap">
+    <div class="topbar"></div>
+        <div id="main-section">
+          <h1>Ruby: Variable Scope</h1>
+          <h4>October 26, 2014</h4>
+          <h2>The Need-to-Know Basis of Ruby Objects</h2>
+          <p>When you first learned Ruby, you learned how to declare a <b>local variable</b>. When you assign a value to x, as in <code>x = 10</code>, you are ensuring that only the code construct you are within--maybe a class definition, maybe a method, maybe just <code>main</code> in the program you are writing--knows about that variable</p>
+
+          <p><b>Local variables</b> start with an underscore or lower-case letter, but they are not the only type of variable you can declare. They are the most discreet variables. That is, their scope is the smallest. A local variable's information will only be known to objects within the code construction (class, module, method, main, etc.) in which it was declared.</p>
+
+          <p>Because local variables are the most discreet, it is fitting that they are the first that new rubyists learn to use. In object oriented design, you always want to limit the amount of messages an object will respond to. This keeps the behavior of your objects predictable, and helps you diagnose bugs that arise from future changes.</p>
+
+          <p>The polar opposite of a local variable is a global variable. These always begin with a dollar sign. If you declare <code>$x = 10</code>, the entire program you are writing will have knowledge of what <code>$x</code> is. Global variables are used sparingly in object oriented design, as there is rarely a reason to create information that every object needs to have behavior for.</p>
+
+          <p><b>Constants</b> are variables with a key feature: they are not meant to be changed. In ruby, you assign constants by starting the variable name with caps, e.g. <code>CONSTANT = "green"</code>. By convention, constants are generally written in ALL CAPS. The main feature of constants in Ruby is that the Ruby interpreter will raise an objection if a program tries to change an already declared constant. You use them to contain information that should be accessed on a read-only basis. In terms of scope, constants act similarly to local variables, in that they are generally accessible within the code construct in which they were declared. That said, when a constant is declared outside of a class of module, it will have global scope.</p>
+
+          <p><b>Instance variables</b> and <b>class variables</b> behave in similar ways. This is reflected in their notation. Instance variables, which are unique on a read-write basis to any given instance of a class, are declared with a single @ at the beginning, e.g. <code>@height = 6</code>. Using instance variables when you are creating or modifying a class allows each instance of that class to have a certain amount of information about itself, and all of that will be pre-categorized. Instance variables ca vary between instance of the same class of object. </p>
+
+          <p>Class variables, on the other hand, will always have the same value for any instance of a class. They are declared with two @ signs instead of one, e.g. <code>@@language = Japanese</code>. You can usae class variables to provide information that you know all instances of your class will need to have, but that you don't want other objects to have access to.</p>
+
+          <p>Generally, the best practice is to keep your variables limited, and only expand toward global scope when you must. Local variables and instance variables are, therefore, the primary variable type you'd turn to.</p>
+          <br>
+
+
+
+
+            <!-- <h>Vocabulary</h4>
+            <ul>
+                <li></li>
+
+                <li> </li>
+
+                <li> </li>
+
+                <li> </li>
+
+                <li> </li>
+
+                <li> </li>
+
+                <li> </li>
+
+            </ul> -->
+
+
+
+          <!--<h2>Section Heading</h2>
+          <p>body text</p>-->
+        </div>
+    </div>
+    <div class="sidebar">
+    <div id="share">
+      <ul>
+        <li id="git-icon"><a href="https://github.com/lukert33"><img src="GitHub-Mark-Light-64px.png"></a></li>
+        <li id="twitter-icon"><a href="https://twitter.com/LRRthomas" class="twitter-follow-button" data-show-count="false">Follow @LRRthomas</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+      </ul>
+    </div>
+    <div id="locallinks">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about_me.html">About Me</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="c5-stereotype-threat.html">Stereotype Threat</a></li>
+        <li><a href="t5-ruby-classes.html">Classes in Ruby</a></li>
+      </ul>
+    </div>
+    <!-- <div id="outlinks">
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=sSEABp9kyds">Some Auden</a></</li>
+        <li><a href="https://www.youtube.com/watch?v=qpuzIoso-44">Some Eliot</a></li>
+        <li><a href="https://www.youtube.com/watch?v=TmIT0RFmwYA">Quite a bit of Browning</a></li>
+      </ul>
+    </div> -->
+  </div>
+     <div class="footer">
+        <a href="mailto:lukert33@gmail.com">Contact Me</a>
+    </div>
+  </body>
+</html>
