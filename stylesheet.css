@@ -223,6 +223,13 @@ code br {
   line-height: 1.3em;
   text-align: justify;
 }
+
+#main-section p .quote {
+  font-style: oblique;
+  color: gray;
+  padding: 16px;
+}
+
 #main-section a {
   color: #F38280;
   text-decoration: underline;

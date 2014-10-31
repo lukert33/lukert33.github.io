@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../stylesheet.css"/>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>JavaScript vs Ruby</title>
+  </head>
+  <body>
+    <div class="body-wrap">
+    <div class="topbar"></div>
+        <div id="main-section">
+          <h1>Flexibility in JavaScript vs Ruby</h1>
+          <h4>Nov 1, 2014</h4>
+          <h2></h2>
+          <p>A big question occured to me as I, a novice Rubyist, set out to learn JavaScript was this: where are all the Errors? This is quite the opposite of what I'd thought when first learning Ruby ("Why oh why are there so many <i>Errors!?</i>") But as I my use of Ruby has matured I've learned to appreciate its stern watch over my syntax.</p>
+
+          <p>Unlike Ruby, Javascript will permit my code to run through to completion unless the syntactical problems fall into a few eggregious categories. A call on a completely unestablished variable or function will put up a flag. What won't, however, is what Ruby calls (frequently, in my case) a TypeError. Let's say I found a string of numbers in a document, and want to put it into an array to analyze it. In either language, this will work:
+            <code>
+              secret_codex = "12 67 8".split(" ")
+                <code class="return">#-> ["12","67","8"]</code>
+            </code>
+
+          <p>So I've got a hunch about these numbers, and run them through a homebrewed cryptographic process of mine: <code>(secret_codex[0] * secret_codex[1]) % secret_codex[2]</code> The result, in JavaScript, is that they are passed through this as if each is a number, and not a string. It returns <code class="return">//->4</code></p>
+
+          <p>Ruby raises a descriptive Error:</p>
+          <code class="return">TypeError: no implicit conversion of String into Integer</code>
+
+          <p>In Ruby, I have to convert each of the elements of secret_codex into a string before treating them like the numbers I want to treat them as.</p>
+
+          <p>Why is this not the case in JavaScript? In some of my initial coding in JS, I actually perceived the syntax to be more rigid. Ruby has many synonyms for the same methods, for instance, and it's vocabulary builds in more interchangeability with spaces and parentheses. Yet in running the actual code--the place where it counts, one might say--JavaScript is much more flexible.</p>
+
+          <p>Part of this, as Marijn Haverbeke writes in <a href="http://eloquentjavascript.net/00_intro.html"><i>Eloquent JavaScript</i></a>, is because early JS designers thought the flexbility would make it more accessible. There are many accounts of this not being the case. Many have found, like I did, that languages that are less permissable and call our Errors more frequently, are easier to learn.</p>
+
+          <p>I suspect the flexbility has a benefit for users, though. For so many applications that serve casual users, it's preferable to have something act weirdly than to have a larger portion of the program refuse to execute; the Internet is hardly free of wonky code, but it works. This, combined with JavaScript's more limited core vocabulary, makes it more crash-proof when displayed by the limitless number of browser configurations that will access a public website.</p>
+
+          <p>Still, in an effort to release code with no bugs for the end user to deal with, I know that as I use JavaScript I'll try to always be sure to keep its flexibility in check, even when I have to write an army of Rubyist Error messages myself.</p>
+
+          <br>
+
+
+
+            <!-- <h>Vocabulary</h4>
+            <ul>
+                <li></li>
+
+                <li> </li>
+
+                <li> </li>
+
+                <li> </li>
+
+                <li> </li>
+
+                <li> </li>
+
+                <li> </li>
+
+            </ul> -->
+
+
+
+          <!--<h2>Section Heading</h2>
+          <p>body text</p>-->
+        </div>
+    </div>
+    <div class="sidebar">
+    <div id="share">
+      <ul>
+        <li id="git-icon"><a href="https://github.com/lukert33"><img src="GitHub-Mark-Light-64px.png"></a></li>
+        <li id="twitter-icon"><a href="https://twitter.com/LRRthomas" class="twitter-follow-button" data-show-count="false">Follow @LRRthomas</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+      </ul>
+    </div>
+    <div id="locallinks">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about_me.html">About Me</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="c5-stereotype-threat.html">Stereotype Threat</a></li>
+        <li><a href="t5-ruby-classes.html">Classes in Ruby</a></li>
+      </ul>
+    </div>
+    <!-- <div id="outlinks">
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=sSEABp9kyds">Some Auden</a></</li>
+        <li><a href="https://www.youtube.com/watch?v=qpuzIoso-44">Some Eliot</a></li>
+        <li><a href="https://www.youtube.com/watch?v=TmIT0RFmwYA">Quite a bit of Browning</a></li>
+      </ul>
+    </div> -->
+  </div>
+     <div class="footer">
+        <a href="mailto:lukert33@gmail.com">Contact Me</a>
+    </div>
+  </body>
+</html>
