@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <title>The Penalty Kick Game</title>
+
+  <script type="text/javascript">
+      var keeper = {};
+
+      keeper.dive = function dive(){
+        if (Math.random() < 0.5){
+          return "left";
+        } else{ return "right";};
+      };
+
+      var ball = {};
+
+      var striker = {};
+
+      striker.kick = function kick(){
+         ball.kick_dir = prompt("Kick the ball 'left' or 'right'.","...");
+      };
+
+      function evaluate_kick(){
+        var kick = ball.kick_dir.toLowerCase(), goalie_move = keeper.dive();
+        alert("You kick the ball "+ kick + " with all you've got..." );
+          switch(true){
+            case (kick == goalie_move):
+              alert("...and the keeper dives " + kick + "! He swats the ball away with one massive palm. There goes your shot at history.");
+              break;
+            case (kick != "left" && kick != "right"):
+              alert("..but " + kick + " is not an effective strike! You graze the ball and it putters halfway to the goal before settling to a full stop, much like your career.");
+              break;
+            case (kick != goalie_move):
+              alert("Goooooaaal! From here on out it's Dom Perignon for breakfast, and pedicures for your mother whenever she pleases!");
+              break;
+          };
+        };
+
+  </script>
+
+</head>
+
+<body>
+
+  <h1>The story so far...</h1>
+  <p>This World Cup has been huge for your home nation of New North Hebrides. The globe now knows the name of your small island home. Your team has fought its way to the finals, and churned through more than 120 minutes of burtal competition against your rivals, hailing from a wealthy European country of over 100 million people.</p>
+  <p>You are the fifth man for your team to attempt a kick. Each team has made four, and the fifth man from your rival's team has just missed his attempt. If you make this shot, you'll be the most famous New North Hebridean in the world. If not, well let's not dwell on that...</p>
+
+  <button onclick = "striker.kick(); evaluate_kick(ball.kick_dir);" >I'm Ready Kick</button>
+
+  <br>
+
+</body>
+
+</html>
