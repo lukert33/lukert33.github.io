@@ -257,7 +257,7 @@ code br {
   padding: 2px 4px 2px 4px;
 }
 
-button .main_button {
+.main_button {
   border: 2px solid gold;
   background-color: gold;
   font-size: 2em;
