@@ -257,6 +257,18 @@ code br {
   padding: 2px 4px 2px 4px;
 }
 
+button .main_button {
+  border: 2px solid gold;
+  background-color: gold;
+  font-size: 2em;
+  border-radius: 10px;
+  text-align: center;
+  alignment-baseline: central;
+  /* position: fixed; */
+  margin: 0 auto 0 auto;
+  display: block;
+}
+
 br {
   line-height: 2.5em;
 }
