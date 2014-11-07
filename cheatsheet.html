@@ -16,12 +16,12 @@
       </ul>
 
       <code>
-        magic_words = ["julie", "andrews"]
-        with_feeling = magic_words.map {|word| word.upcase}
-          <code class="return">#=&gt; ["JULIE","ANDREWS"]</code>
-
-        p magic_words  <code class="return">["julie", "andrews"]</code>
-        magic_words.map! <code class="return">#=&gt; ["JULIE","ANDREWS"]</code>
+        magic_words = ["julie", "andrews"] <br>
+        with_feeling = magic_words.map {|word| word.upcase} <br>
+          <code class="return">#=&gt; ["JULIE","ANDREWS"]</code><br>
+          <br>
+        p magic_words  <code class="return">["julie", "andrews"]</code><br>
+        magic_words.map! <code class="return">#=&gt; ["JULIE","ANDREWS"]</code><br>
         p magic_words <code class"return">["JULIE","ANDREWS"]</code>
       </code>
 
@@ -32,14 +32,16 @@
 
     <div class="subtle-horizontal">
       <code>
-        confused_array = ["even","even", "odd", "odd","even"]
+        confused_array = ["even","even", "odd", "odd","even"]<br>
+        <br>
 
-        confused_array.each_with_index do |elem, index|
-          if (index + 1) % 2 == 0
-            confused_array[index] = "even"
-          else confused_array[index] = "odd"
-          end
-        end
+        confused_array.each_with_index do |elem, index|<br>
+          if (index + 1) % 2 == 0<br>
+            confused_array[index] = "even"<br>
+          else confused_array[index] = "odd"<br>
+          end<br>
+        end<br>
+        <br>
 
         p confused_array <code class="return">#=&gt; ["odd", "even", "odd", "even", "odd"]</code>
       </code>
@@ -48,12 +50,13 @@
 
     <div class="subtle-horizontal">
       <code>
-        exclusive_range = (0...80)
-        exclusive_range.include?(80)
-        <code class="return">#=&gt; false</code>
+        exclusive_range = (0...80)<br>
+        exclusive_range.include?(80)<br>
+        <code class="return">#=&gt; false</code><br>
+        <br>
 
-        inclusive_range = (0..80)
-        inclusive_range.include?(80)
+        inclusive_range = (0..80)<br>
+        inclusive_range.include?(80)<br>
         <code class="return">#=&gt; true</code>
       </code>
       <p><h4>#include?</h4> checks whether the enumerator contains the value you pass as an argument, and returns true/false.</p>
@@ -61,23 +64,23 @@
 
     <div class="subtle-horizontal">
       <code>
-        arr = ["John","Jacob","Jingleheimer","Schmidt"]
-        arr.cycle
-        <code class="return">#=&gt; &lt;Enumerator: ["John", "Jacob", "Jingleheimer", "Schmidt"]:cycle&gt;</code>
+        arr = ["John","Jacob","Jingleheimer","Schmidt"]<br>
+        arr.cycle<br>
+        <code class="return">#=&gt; &lt;Enumerator: ["John", "Jacob", "Jingleheimer", "Schmidt"]:cycle&gt;</code><br>
+        <br>
 
-        arr_enumerated = arr.cycle(1)
-        5.times {p arr_enumerated.next}
+        arr_enumerated = arr.cycle(1)<br>
+        5.times {p arr_enumerated.next}<br>
         <code class="return">
-          "John"
-          "Jacob"
-          "Jingleheimer"
-          "Schmidt"
-          #[Error raised]: in `next': iteration reached an end (StopIteration)
+          "John"<br>
+          "Jacob"<br>
+          "Jingleheimer"<br>
+          "Schmidt"<br>
+          #[Error raised]: in `next': iteration reached an end (StopIteration)<br>
         </code>
 
-        arr.cycle(2) {|name| p name + "!"}
+        arr.cycle(2) {|name| p name + "!"}<br>
         <code class="return">#displays each name with an exclamation mark, twice, in sequence.</code>
-
       </code>
       <p><h4>#cycle</h4> creates an enumerator that you can step through with the #next method. You can pass a number as an argument to determine how many cycles the enumerator will undergo, and a block of code that it applies to each element while it is cycling.</p>
     </div>
