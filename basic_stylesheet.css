@@ -1,0 +1,101 @@
+
+div .subtle-horizontal{
+  width: ;
+}
+
+br {
+  line-height: 2.5em;
+}
+
+p.code-notes{
+  display: inline-block;
+  position: relative;
+}
+
+code {
+  font-family: Courier;
+  background-color: #A1A1BC;
+  padding: 4px 6px 4px 6px;
+  margin: 0 2px 0 2px;
+  color: #5CE62E;
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1em;
+}
+code.return {
+  color: #ffd919; /*darker yellow than main*/
+}
+
+.main-section{
+  width: 80%;
+  padding: 0 15px 40px 15px;
+  margin: 0 auto 40px auto;
+}
+.main-section h1 {
+  color: rgb(148, 194, 69);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 0px;
+  padding-bottom: 1px;
+  font-family: Helvetica;
+  font-size: 3em;
+}
+.main-section h2 {
+  margin: 0px;
+  padding: 0px 0px 6px 0px;
+  font-family: Helvetica;
+  text-align: center;
+}
+.main-section p h3{
+  text-align: left;
+  display: inline;
+  font-weight: bold;
+}
+.main-section h4 {
+  text-align: center;
+  margin: 0px 0px 6px 0px;
+  font-family: Arial;
+  font-size: 1.3em;
+  padding: 10px 0px 10px 0px;
+
+}
+.main-section p {
+  margin: 0px;
+  padding: 5px 15px 20px 0px;
+  line-height: 1.3em;
+  text-align: justify;
+}
+
+.main-section p .quote {
+  font-style: oblique;
+  color: gray;
+  padding: 16px;
+}
+
+.main-section a {
+  color: #F38280;
+  text-decoration: underline;
+}
+.main-section ul{
+  list-style: square;
+  border-left: 1px solid #F38280;
+  padding-left: 40px;
+  margin-left: 40px
+}
+.main-section li {
+  padding: .8em
+}
+.main-section table {
+  border: 1px solid black;
+}
+.main-section th {
+  background-color: #A1A1BC;
+  color: #FFFF19;
+  border: 1px solid black;
+  padding: 4px 12px 0px 12px;
+}
+.main-section td {
+  border: 1px solid black;
+  padding: 2px 4px 2px 4px;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code Cheatsheet</title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+<body>
+  <div class = "main-section">
+    <h1>Handy Enumerable Methods</h1>
+    <div class = "subtle-horizontal">
+      <p>In this section I'll work with a sample array of strings and integers, to demonstrate some especially handy methods that use Ruby's Enumerable Module. Which deal in:</p>
+      <ul>
+        <li>Enumerable - a module that can be applied to any Ruby class with an #each method</li>
+        <li>Enumerator - a class. An enumerator is produced implicitly when you call an iterative method on a collection. It's what your method iterates over. It can also be produced as a more static object, and stored, as a variable, with #to_enum. <code>["a","b","c"].to_enum</code> returns <code class="return"> #=&gt; &lt;Enumerator: ["a", "b", "c"]:each&gt;</code></li>
+      </ul>
+
+      <code>
+        magic_words = ["julie", "andrews"]
+        with_feeling = magic_words.map {|word| word.upcase}
+          <code class="return">#=&gt; ["JULIE","ANDREWS"]</code>
+
+        p magic_words  <code class="return">["julie", "andrews"]</code>
+        magic_words.map! <code class="return">#=&gt; ["JULIE","ANDREWS"]</code>
+        p magic_words <code class"return">["JULIE","ANDREWS"]</code>
+      </code>
+
+      <p class = "code-notes">
+        <h3>#map</h3> and its destructive equivalent, <h3>#map!</h3> apply whatever code you pass to them to every element of the array.
+      </p>
+    </div>
+
+    <div class="subtle-horizontal">
+      <code>
+        confused_array = ["even","even", "odd", "odd","even"]
+
+        confused_array.each_with_index do |elem, index|
+          if (index + 1) % 2 == 0
+            confused_array[index] = "even"
+          else confused_array[index] = "odd"
+          end
+        end
+
+        p confused_array <code class="return">#=&gt; ["odd", "even", "odd", "even", "odd"]</code>
+      </code>
+      <p><h4>#each_with_index</h4> allows you to declare two variables, first for the item (as in #each), and second for the index in the array. This allows you to test the index, or to work with several instances of the same value, while keeping tabs on what index they each occur at. You cannot write over the value of each element, but you can overwrite it if you refer to the array at the index.</p>
+    </div>
+
+    <div class="subtle-horizontal">
+      <code>
+        exclusive_range = (0...80)
+        exclusive_range.include?(80)
+        <code class="return">#=&gt; false</code>
+
+        inclusive_range = (0..80)
+        inclusive_range.include?(80)
+        <code class="return">#=&gt; true</code>
+      </code>
+      <p><h4>#include?</h4> checks whether the enumerator contains the value you pass as an argument, and returns true/false.</p>
+    </div>
+
+    <div class="subtle-horizontal">
+      <code>
+        arr = ["John","Jacob","Jingleheimer","Schmidt"]
+        arr.cycle
+        <code class="return">#=&gt; &lt;Enumerator: ["John", "Jacob", "Jingleheimer", "Schmidt"]:cycle&gt;</code>
+
+        arr_enumerated = arr.cycle(1)
+        5.times {p arr_enumerated.next}
+        <code class="return">
+          "John"
+          "Jacob"
+          "Jingleheimer"
+          "Schmidt"
+          #[Error raised]: in `next': iteration reached an end (StopIteration)
+        </code>
+
+        arr.cycle(2) {|name| p name + "!"}
+        <code class="return">#displays each name with an exclamation mark, twice, in sequence.</code>
+
+      </code>
+      <p><h4>#cycle</h4> creates an enumerator that you can step through with the #next method. You can pass a number as an argument to determine how many cycles the enumerator will undergo, and a block of code that it applies to each element while it is cycling.</p>
+    </div>
+
+
+
+
+
+  </div>
+
+</body>
+
+</html>

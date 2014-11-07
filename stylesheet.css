@@ -13,7 +13,7 @@
   right: 0;
   padding-left: -20px;
 }
-.sidebar{
+.sidebar {
   position: fixed;
   right: 0px;
   top: 0px;
@@ -279,3 +279,4 @@ display: block;
 margin: 0 auto 0 auto;
 }
 /*end blog formatting*/
+
