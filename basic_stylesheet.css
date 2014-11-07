@@ -12,7 +12,7 @@ br {
   line-height: 1em;
 }
 
-.code-notes{
+div.code-notes{
   display: inline-block;
   width: 40%
 }
@@ -59,7 +59,7 @@ code.return {
 }
 .main-section h3{
   text-align: left;
-  display: inline-block;
+  display: inline;
   font-weight: bold;
 }
 .main-section h4 {
