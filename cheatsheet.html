@@ -26,7 +26,7 @@
       </code>
 
       <div class = "code-notes">
-        <h3>#map</h3><p> and its destructive equivalent, </p><h3>#map!</h3><p> apply whatever code you pass to them to every element of the array.</p>
+        <p><h3>#map</h3> and its destructive equivalent, <h3>#map!</h3> apply whatever code you pass to them to every element of the array.</p>
       </div>
     </div>
 
@@ -45,7 +45,8 @@
 
         p confused_array <code class="return">#=&gt; ["odd", "even", "odd", "even", "odd"]</code>
       </code>
-      <p><h3>#each_with_index</h3> allows you to declare two variables, first for the item (as in #each), and second for the index in the array. This allows you to test the index, or to work with several instances of the same value, while keeping tabs on what index they each occur at. You cannot write over the value of each element, but you can overwrite it if you refer to the array at the index.</p>
+      <div class="code notes">
+      <p><h3>#each_with_index</h3> allows you to declare two variables, first for the item (as in #each), and second for the index in the array. This allows you to test the index, or to work with several instances of the same value, while keeping tabs on what index they each occur at. You cannot write over the value of each element, but you can overwrite it if you refer to the array at the index.</p></div>
     </div>
 
     <div class="subtle-horizontal">
@@ -59,7 +60,8 @@
         inclusive_range.include?(80)<br>
         <code class="return">#=&gt; true</code>
       </code>
-      <p><h3>#include?</h3> checks whether the enumerator contains the value you pass as an argument, and returns true/false.</p>
+      <div class="code notes">
+      <p><h3>#include?</h3> checks whether the enumerator contains the value you pass as an argument, and returns true/false.</p></div>
     </div>
 
     <div class="subtle-horizontal">
@@ -83,7 +85,8 @@
         arr.cycle(2) {|name| p name + "!"}<br>
         <code class="return">#displays each name with an exclamation mark, twice, in sequence.</code>
       </code>
-      <p><h3>#cycle</h3> creates an enumerator that you can step through with the #next method. You can pass a number as an argument to determine how many cycles the enumerator will undergo, and a block of code that it applies to each element while it is cycling.</p>
+      <div class="code notes">
+      <p><h3>#cycle</h3> creates an enumerator that you can step through with the #next method. You can pass a number as an argument to determine how many cycles the enumerator will undergo, and a block of code that it applies to each element while it is cycling.</p></div>
     </div>
 
 
