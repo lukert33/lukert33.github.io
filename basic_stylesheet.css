@@ -7,9 +7,14 @@ br {
   line-height: 2.5em;
 }
 
-p.code-notes{
+.code-notes{
   display: inline-block;
   position: relative;
+  width: 40%
+}
+
+.code-notes h3{
+  display: inline-block;
 }
 
 code {
@@ -21,6 +26,7 @@ code {
   display: inline-block;
   font-size: 1em;
   line-height: 1em;
+  max-width: 45%;
 }
 code.return {
   color: #ffd919; /*darker yellow than main*/
