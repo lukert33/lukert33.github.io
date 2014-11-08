@@ -14,7 +14,8 @@ br {
 
 div.code-notes{
   display: inline-block;
-  width: 40%
+  width: 30%;
+  position: absolute;
 }
 
 .code-notes h3{
@@ -31,9 +32,11 @@ code {
   font-size: 1em;
   line-height: 1em;
   max-width: 45%;
+  min-width: 45%;
 }
 code.return {
   color: #ffd919; /*darker yellow than main*/
+  display:
 }
 
 .main-section{
