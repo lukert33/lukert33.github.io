@@ -14,7 +14,9 @@
         <li>Enumerable - a module that can be applied to any Ruby class with an #each method</li>
         <li>Enumerator - a class. An enumerator is produced implicitly when you call an iterative method on a collection. It's what your method iterates over. It can also be produced as a more static object, and stored, as a variable, with #to_enum. <code>["a","b","c"].to_enum</code> returns <br><code class="return"> #=&gt; &lt;Enumerator: ["a", "b", "c"]:each&gt;</code></li>
       </ul>
+    </div>
 
+    <div class = "subtle-horizontal">
       <code>
         magic_words = ["julie", "andrews"] <br>
         with_feeling = magic_words.map {|word| word.upcase} <br>
@@ -22,7 +24,7 @@
           <br>
         p magic_words  <br><code class="return">["julie", "andrews"]</code><br>
         magic_words.map! <br><code class="return">#=&gt; ["JULIE","ANDREWS"]</code><br>
-        p magic_words <code class"return">["JULIE","ANDREWS"]</code>
+        p magic_words <br><code class="return">["JULIE","ANDREWS"]</code>
       </code>
 
       <div class = "code-notes">

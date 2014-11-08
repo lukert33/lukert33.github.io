@@ -16,6 +16,7 @@ div.code-notes{
   display: inline-block;
   width: 30%;
   position: absolute;
+  margin-left: 45px;
 }
 
 .code-notes h3{
@@ -35,8 +36,9 @@ code {
   min-width: 45%;
 }
 code.return {
-  color: #ffd919; /*darker yellow than main*/
-  display:
+  color: #ffd919;
+  display: inline;
+  line-height: 1.5em;
 }
 
 code blockquote{
@@ -47,6 +49,7 @@ code blockquote{
   width: 80%;
   padding: 0 15px 40px 15px;
   margin: 0 auto 40px auto;
+  font-family: Helvetica;
 }
 .main-section h1 {
   color: rgb(148, 194, 69);
@@ -55,7 +58,6 @@ code blockquote{
   text-align: center;
   margin-bottom: 0px;
   padding-bottom: 1px;
-  font-family: Helvetica;
   font-size: 3em;
 }
 .main-section h2 {
@@ -98,7 +100,8 @@ code blockquote{
   list-style: square;
   border-left: 1px solid #F38280;
   padding-left: 40px;
-  margin-left: 40px
+  margin-left: 40px;
+  max-width: 65%;
 }
 .main-section li {
   padding: .8em
