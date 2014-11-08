@@ -1,7 +1,7 @@
 
 div .subtle-horizontal{
   width: 90%;
-  background-color: rgba(255,255,229, 0.4);
+  background-color: rgba(155,195,129, 0.4);
   margin-top: 20px;
 }
 
@@ -49,7 +49,10 @@ code blockquote{
   font-family: Helvetica;
 }
 .main-section HR{
-
+  width: 50%;
+  font-size: 2em;
+  color: green;
+  border: 1px solid gold;
 }
 .main-section h1 {
   color: rgb(148, 194, 69);
