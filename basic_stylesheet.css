@@ -39,6 +39,10 @@ code.return {
   display:
 }
 
+code blockquote{
+  line-height: 1em;
+}
+
 .main-section{
   width: 80%;
   padding: 0 15px 40px 15px;
