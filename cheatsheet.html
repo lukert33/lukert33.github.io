@@ -15,6 +15,7 @@
         <li>Enumerator - a class. An enumerator is produced implicitly when you call an iterative method on a collection. It's what your method iterates over. It can also be produced as a more static object, and stored, as a variable, with #to_enum. <code>["a","b","c"].to_enum</code> returns <br><code class="return"> #=&gt; &lt;Enumerator: ["a", "b", "c"]:each&gt;</code></li>
       </ul>
     </div>
+    <HR>
 
     <div class = "subtle-horizontal">
       <code>
@@ -31,6 +32,7 @@
         <p><h3>#map</h3> and its destructive equivalent, <h3>#map!</h3> apply whatever code you pass to them to every element of the array.</p>
       </div>
     </div>
+    <HR>
 
     <div class = "subtle-horizontal">
       <code>
@@ -50,6 +52,7 @@ end<br>
       <div class="code-notes">
       <p><h3>#each_with_index</h3> allows you to declare two variables, first for the item (as in #each), and second for the index in the array. This allows you to test the index, or to work with several instances of the same value, while keeping tabs on what index they each occur at. You cannot write over the value of each element, but you can overwrite it if you refer to the array at the index.</p></div>
     </div>
+    <HR>
 
     <div class = "subtle-horizontal">
       <code>
@@ -65,6 +68,7 @@ end<br>
       <div class = "code-notes">
       <p><h3>#include?</h3> checks whether the enumerator contains the value you pass as an argument, and returns true/false.</p></div>
     </div>
+    <HR>
 
     <div class = "subtle-horizontal">
       <code>
