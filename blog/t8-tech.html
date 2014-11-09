@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../stylesheet.css"/>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>Regular Expressions || Regex</title>
+  </head>
+  <body>
+    <div class="body-wrap">
+    <div class="topbar"></div>
+        <div id="main-section">
+          <h1>Regular Expressions (aka Regex, Regexp)</h1>
+          <h4>Nov 9, 2014</h4>
+          <p>Regular expressions describe patterns of characters. Commonly referred to with the shorthand regexp, they are an integral part of most common programming languages. Most languages use similar commands to call regexps.</p>
+
+          <p>Regexps can be very high level, for example <code>/ \d/</code> describes any digit, and <code>/ \s/</code> descibres any whitespace (spaces, tab indents, line breaks). They can also be tasked for finding very specific patterns. <code> /cobra/ </code> looks for the string of letters, c-o-b-r-a, in exactly that arrangement. <code> /[aeiouy3]/ </code> employs brackets to indicate a set of characters. If the string being searched contains any one of those characters (the vowels, y, and--for whatever reason, the digit 3), it will match the regexp. </p>
+
+          <p>In Ruby, regexps are objects; instances of their very own Class, <h3>Regexp.</h3>, i.e. <code> /\d/.class <code class="return">#=&gt;Regexp &lt; Object </code> </code>. As you've seen in my examples so far, they can be denoted with <code>/.../</code>. You can also use <code>%r{...}</code>. Both of those represent the Regexp literals.</p>
+
+          <p>To be very meta about it, let's say you want to search a document for the string describing the Regexp literal, %r{...} to readers. In a string, when you want to write quotation marks, you have to escape them (because they mark the string literal, <code>""</code>. So you deploy an apostrophe with: <code>puts "what\'s up?"</code>. You use the backslash as an escape character. In Regexp's, the backslash is also the escape character. So to find the index position of the beginning of the first Regexp literal in <code>document</code> you'd use: </p>
+          <code>
+            document =~ /\%\{/   <code class="return">26 #this being the index position where the first Regexp opens in the string.</code>
+          </code>
+
+          <p>To help you get started, here is a list of the common character classes, search for in Regexps by escaping with the backslash:</p>
+
+            <!-- <h>Vocabulary</h4> -->
+            <ul>
+                <li>\w = word character (alphanumerics and underscores)</li>
+
+                <li>\W = non-word character</li>
+
+                <li>\d = digits </li>
+
+                <li>\D = non-digits</li>
+
+                <li>\s = whitespace </li>
+
+                <li>\S = non-whitespace </li>
+
+                <li>\b = word boundaries </li>
+
+                <li>\B = non-word boundaries</li>
+
+                <li>\n = newline</li>
+
+            </ul>
+
+            <p>This should allow you to dip your toes into Regexp use. As you work, you may want to refer to this concise guide to Perl's special Regexp characters, which is what many popular languages like Ruby, JavaScript, and Python use.</p>
+            <br>
+
+
+
+          <!--<h2>Section Heading</h2>
+          <p>body text</p>-->
+        </div>
+    </div>
+    <div class="sidebar">
+    <div id="share">
+      <ul>
+        <li id="git-icon"><a href="https://github.com/lukert33"><img src="GitHub-Mark-Light-64px.png"></a></li>
+        <li id="twitter-icon"><a href="https://twitter.com/LRRthomas" class="twitter-follow-button" data-show-count="false">Follow @LRRthomas</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+      </ul>
+    </div>
+    <div id="locallinks">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about_me.html">About Me</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="c5-stereotype-threat.html">Stereotype Threat</a></li>
+        <li><a href="t5-ruby-classes.html">Classes in Ruby</a></li>
+      </ul>
+    </div>
+    <!-- <div id="outlinks">
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=sSEABp9kyds">Some Auden</a></</li>
+        <li><a href="https://www.youtube.com/watch?v=qpuzIoso-44">Some Eliot</a></li>
+        <li><a href="https://www.youtube.com/watch?v=TmIT0RFmwYA">Quite a bit of Browning</a></li>
+      </ul>
+    </div> -->
+  </div>
+     <div class="footer">
+        <a href="mailto:lukert33@gmail.com">Contact Me</a>
+    </div>
+  </body>
+</html>
