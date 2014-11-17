@@ -134,7 +134,7 @@ p {
 }
 code {
   font-family: Courier;
-  background-color: #A1A1BC;
+  background-color: rgba(161,161,188, .7);
   padding: 4px 6px 4px 6px;
   margin: 0 2px 0 2px;
   color: #5CE62E;

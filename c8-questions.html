@@ -30,37 +30,6 @@
         <div class="col-sm-8 blog-main">
 
           <div class="blog-post">
-            <h2 class="blog-post-title">Injecting JavaScript</h2>
-            <p class="blog-post-meta">November 16, 2014 by <a href="about_me.html">Luke</a></p>
-            <hr>
-            <p>I don't know whether to be proud or ashamed of this: I've spent over an hour trying to make it so that the yellow borders around my nav bar links fade in over 800 milliseconds, instead of instantaneously, when you hover your mouse over them. That 800 milliseconds? That's the difference between using css for my hover events, and using JavaScript.</p>
-            <p>JavaScript, used in this case with the jQuery library, should enable me to animate the increasing opacity of the yellow border, which is entirely transparent if the mouse is not within it. Here's my code:</p>
-            <code>
-              $(document).ready(function(){
-
-              navLink = $('a.blog-nav-item')
-              navLink.hover(
-              function(){
-                $(this).css('border').fadeIn(300);
-             }, function(){
-                $(this).css('border').fadeOut(300);
-             })
-
-            })
-            <span class="return">#=&gt;// Uncaught TypeError: undefined is not a function</span>
-            </code>
-            <p>The error is arising from the #css('border') call. I'll try to work this out when we look further into JavaScript at DBC.</p>
-
-            <p>In the course of researching this, I did learn about easing in JavaScript animations. Easing refers to the acceleration and deceleration of an animation's progress from beginning to end. "Linear" and "swing" are the usual values assigned to it. In linear, the animation moves at the same pace until it is done. Swing easing starts and ends slow, with a relatively heavy acceleration in the middle. It provides a level of naturalism--simulating momentum in your animations. These charts show the difference in progress toward an animation's end state over time:</p>
-            <img src="imgs/linear_swing.png">
-            <p>You can see some really well done demonstrations of animation easing at the <a href="http://jqueryui.com/easing/">jQuery UI</a> site.</p>
-            <p>So, I'm learning about concepts and failing to execute them well...I think that's supposed to be part of the process.</p>
-            <p>The goods news is that my fiance and my parents, none of whom know the difference between CSS and JavaScript, like the instantly rendered border currently deployed in the nav bar. Tomorrow, on my first day on site at DBC, I imagine I'll meet many people who will appreciate the huge difference illustrated by those missing 800 milliseconds.</p>
-          </div><!-- /.blog-post -->
-
-          <div class="col-sm-8 blog-main">
-
-          <div class="blog-post">
             <h2 class="blog-post-title">Formulating Questions</h2>
             <p class="blog-post-meta">November 16, 2014 by <a href="about_me.html">Luke</a></p>
             <hr>
@@ -76,6 +45,8 @@
 
           </div><!-- /.blog-post -->
 
+
+
           <nav>
             <ul class="pager">
               <li><a href="#">Previous</a></li>
@@ -88,7 +59,7 @@
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
-            <p>I'm Luke Thomas, a programmer based in Brooklyn, NY. I used to sell translation and audio rights to books; now I code. It's all language, ladies and gents.</p>
+            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
           </div>
           <div class="sidebar-module">
             <h4>Archives</h4>
@@ -111,8 +82,9 @@
           <div class="sidebar-module">
             <h4>Elsewhere</h4>
             <ol class="list-unstyled">
-              <li><a href="https://github.com/lukert33">GitHub</a></li>
-              <li><a href="https://twitter.com/LRRthomas">Twitter</a></li>
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
             </ol>
           </div>
         </div><!-- /.blog-sidebar -->
