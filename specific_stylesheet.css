@@ -1,3 +1,9 @@
+#resume_wrapper embed{
+  width: 900px;
+  height: 2100px;
+  border: 1px solid black;
+}
+
 div.blog-masthead{
   background-color: #A1A1BC;
   height: 52px;
