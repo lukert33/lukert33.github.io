@@ -1,0 +1,11 @@
+- icon: icon-user
+  title: Home Inspection
+  description: Our team will take samples from your pipes, from between the connection to the watermane and the distribution of water to your taps. We'll dig a narrow access hole, take a sample filing from the pipe, and fill the hole to minimize the imact on your yard.
+
+- icon: icon-flask
+  title: Lab Testing
+  description: Our experts will test your sample in our lab. We'll determine the parts per billion of lead molecules in your home's pipes, and provide you with a detailed breakdown of the substances in your drinking water.
+
+- icon: icon-leaf
+  title: Pipe Replacement
+  description: If your pipes have more than the FDA's recommended parts per billion of lead, we will arrange to have them replaced.

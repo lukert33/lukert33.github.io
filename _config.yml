@@ -1,15 +1,15 @@
 # Site settings
-title: DentistSmile | Dental Jekyll Theme
-description: "A responsive Jekyll theme for dental clinics."
+title: Lead and Galvanized Pipe Inspection
+description: "Schedule an inspection of your home's pipes, to keep your family safe from lead contamination and in line with new, better water standards."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the name of your domain
-logo_url: svg/min/logo.svg
+logo_url: img/logo.png
 
 # Hero
 hero: 
-    hero_img: hero.jpg
-    hero_title: DentistSmile
-    hero_description: A responsive Jekyll theme for dental clinics.
+    hero_img: water-kitchen-black-design.jpg
+    hero_title: Lead & Galvanized Pipe Inspection
+    hero_description: Schedule an inspection of your home's pipes, to keep your family safe from lead contamination and in line with new, better water standards.
 
 # Contact form
 api_token: # Enter API token here
@@ -19,12 +19,12 @@ contact:
     phone: 932 50 540
     emergency: 931 53 234
     email: contact@yoursite.com
-    address: Von schroeders 273, <br> Viña del mar - Chile
+    address: 33 Highland Avenue, <br> Rowayton CT 06853
 
 # Opening hours
-monday_friday: 9:00 – 18:00
-saturday: 10:00 – 17:00
-sunday: 10:00 – 15:00
+monday_friday: 9:00 – 6:00
+saturday: 10:00 – 5:00
+sunday: 10:00 – 5:00
 
 # Testimonials
 testimonials:
@@ -33,7 +33,7 @@ testimonials:
 # Map
 map:
     zoom: 17
-    address: Von schroeders 273, Viña del mar, Chile
+    address: 33 Highland Avenue, Rowayton CT 06853, USA
     address_details: svg/min/logo.svg
 
 # Social settings
@@ -45,7 +45,7 @@ skype: skype:obaez_design?userinfo
 feed: yes
 
 # Footer
-copyright: © 2015 DentistSmile - All rights reserved
+copyright: © 2016 United Lead and Galvanized Pipe Inspection - All rights reserved
 
 # Build settings
 markdown: kramdown

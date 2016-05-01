@@ -16,7 +16,7 @@ layout: default
     <div class="container-fluid">
         
         <div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form">
-            <h3><svg class="icon icon-envelope-o"><use xlink:href="#icon-envelope-o"></use></svg>Make an Appointment</h3>
+            <h3><svg class="icon icon-envelope-o"><use xlink:href="#icon-envelope-o"></use></svg>Get an Inspection Quote</h3>
             <form action="https://getsimpleform.com/messages?form_api_token={{ site.api_token }}" method="post">
                 <div class="form-field">
                     <input name="name" type="text" placeholder="Name" required>
@@ -50,24 +50,9 @@ layout: default
         </ul>
     </div>
     <div class="col-sm-4">
-        <svg class="icon icon-clock-o"><use xlink:href="#icon-clock-o"></use></svg>
-        <h3>Opening Hours</h3>
-        <table>
-            <tbody>
-                <tr>
-                    <td>Monday – Friday</td>
-                    <td>{{ site.monday_friday }}</td>
-                </tr>
-                <tr>
-                    <td>Saturday</td>
-                    <td>{{ site.saturday }}</td>
-                </tr>
-                <tr>
-                    <td>Sunday</td>
-                    <td>{{ site.sunday }}</td>
-                </tr>
-            </tbody>
-        </table>
+        <svg class="icon icon-quote-left"><use xlink:href="#icon-clock-o"></use></svg>
+        <h3>Learn More About Lead Contamination</h3>
+        <p><a href="https://www.epa.gov/your-drinking-water/basic-information-about-lead-drinking-water#getinto">According the EPA</p>, homes built before 1986 are more likely to have lead in their water fixtures. As the Nation witnessed in Flint, MI, in 2016, pipe corrosion can result in rapid and drastic drinking water contamination.</p>
     </div>
     <div class="col-sm-4">
         <svg class="icon icon-map-marker"><use xlink:href="#icon-map-marker"></use></svg>
@@ -80,14 +65,14 @@ layout: default
 <!-- End 3 columns -->
 
 <!-- Start About -->
-<div id="about" class="about">
+<div id="contanimation" class="about">
     <div class="container-fluid">
-        <h2 class="section-title">About Us</h2>
+        <h2 class="section-title">About Lead Contamination</h2>
 
         <div class="row">
             <div class="col-sm-6">
-                <h3>Welcome to DentistSmile</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis nostrum ab vero temporibus magnam, delectus!</p>
+                <h2>We will inspect your home pipes for lead contanimation</h2>
+                <p>Lead can be found in some metal water taps, interior water pipes, or pipes connecting a house to the main water pipe in the street. Lead found in tap water usually comes from the corrosion of older fixtures or from the solder that connects pipes. When water sits in leaded pipes for several hours, lead can leach into the water supply.</p>
 
                 <div class="media">
                     <div class="media-left">
@@ -96,7 +81,7 @@ layout: default
                         </div>
                     </div>
                     <div class="media-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam explicabo unde doloremque quo, fugit, nisi.</p>
+                        <p>10 million American homes and buildings receive water from service lines that are at least partially lead, according to the Environmental Protection Agency.</p>
                     </div>
                 </div>
 
@@ -107,7 +92,7 @@ layout: default
                         </div>
                     </div>
                     <div class="media-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam explicabo unde doloremque quo, fugit, nisi.</p>
+                        <p>Despite the dire problem of lead poisoning, there is no national plan to get rid of pipes that contain lead. We offer you the opportunity to inspect your pipes so that you control the decision to change them out.</p>
                     </div>
                 </div>
 
@@ -123,7 +108,7 @@ layout: default
                 </div>
             </div>
             <div class="col-sm-6">
-                <img src="img/about.jpg" alt="...">
+                <img src="img/swimming-pool.jpeg" alt="...">
             </div>
         </div>
     </div>
@@ -131,17 +116,17 @@ layout: default
 <!-- End About -->
 
 <!-- Start Treatments -->
-<div id="treatments" class="treatments">
+<div id="services" class="treatments">
     <div class="container-fluid">
-        <h2 class="section-title">Treatments</h2>
+        <h2 class="section-title">Services</h2>
 
         <div class="row">
-            {% for treatment in site.data.treatments %}
+            {% for service in site.data.services %}
                 <div class="col-sm-6 col-md-4">
                     <div class="icon-box">
-                        <svg class="icon {{ treatment.icon }}"><use xlink:href="#{{ treatment.icon }}"></use></svg>
-                        <h4>{{ treatment.title }}</h4>
-                        <p>{{ treatment.description }}</p>
+                        <svg class="icon {{ service.icon }}"><use xlink:href="#{{ service.icon }}"></use></svg>
+                        <h4>{{ service.title }}</h4>
+                        <p>{{ service.description }}</p>
                     </div>
                 </div>
             {% endfor %}
@@ -195,25 +180,6 @@ layout: default
     </div>
 </div>
 <!-- End Testimonials -->
-
-<!-- Start Gallery -->
-<div id="gallery" class="gallery">
-        
-    <h2 class="section-title">Gallery</h2>
-
-    {% for images in site.data.gallery %}
-        <a href="{{ site.baseurl }}/img/gallery/large/{{ images.image_large }}" class="gallery-item expandable-box image-link">
-            <div class="expandable-box-top">
-                <img src="{{ site.baseurl }}/img/gallery/thumb/{{ images.image_thumb }}" alt="{{ images.image_alt }}">
-            </div>
-            <div class="expandable-box-bottom">
-                <span><svg class="icon icon-chain"><use xlink:href="#icon-chain"></use></svg></span>
-            </div>
-        </a>
-    {% endfor %}
-
-</div>
-<!-- End Gallery -->
 
 <!-- Start Map -->
 <div id="location" class="map" data-zoom="{{ site.map.zoom }}" data-address="{{ site.map.address }}" data-address-details="<img src='{{ site.map.address_details }}'>"></div>
