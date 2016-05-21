@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="hero">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Lead and Galvanized Pipes in the News</h1>  
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8">
+      <p>In recent years, and especially after the Flint, MI water crisis of 2014-2015, the public has woken up to the fact that the United States never properly removed hazardous lead from our infrastructure.</p>
+
+      {% for article in site.data.articles %}
+        <a href="{{ article.url }}" target="_blank">
+          <h2>{{ article.title }}</h2>
+          <div>
+            {{article.date}} | <em>{{ article.publication }}</em>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
