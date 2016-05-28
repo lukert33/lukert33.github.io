@@ -5,6 +5,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the name of your domain
 logo_url: img/logo.png
 
+permalink: pretty
+markdown: kramdown
+
 # Hero
 hero: 
     hero_img: water-kitchen-black-design.jpg
@@ -41,7 +44,6 @@ facebook: http://facebook.com
 twitter: http://twitter.com
 instagram: http://instagram.com
 youtube: http://youtube.com
-skype: skype:obaez_design?userinfo
 feed: yes
 
 # Footer

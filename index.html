@@ -15,7 +15,7 @@ layout: default
 
     <div class="container-fluid">
         
-        <div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form">
+        <div id="contact-us" class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form">
             <h3><svg class="icon icon-envelope-o"><use xlink:href="#icon-envelope-o"></use></svg>Get an Inspection Quote</h3>
             <form action="https://getsimpleform.com/messages?form_api_token={{ site.api_token }}" method="post">
                 <div class="form-field">
@@ -41,6 +41,20 @@ layout: default
 <!-- Start 3 columns -->
 <div class="three-shade-col">
     <div class="col-sm-4">
+        <svg class="icon icon-map-marker"><use xlink:href="#icon-map-marker"></use></svg>
+        <h3>Location</h3>
+            <p>
+                {{ site.contact.address }}
+            </p>
+    </div>
+    
+    <div class="col-sm-4">
+        <svg class="icon icon-quote-left"><use xlink:href="#icon-clock-o"></use></svg>
+        <h3>Learn More About Lead Contamination</h3>
+        <p><a style="color:white; text-decoration: underline;" href="https://www.epa.gov/your-drinking-water/basic-information-about-lead-drinking-water#getinto">According the EPA</a>, homes built before 1986 are more likely to have lead in their water fixtures. As the Nation witnessed in Flint, MI, in 2016, pipe corrosion can result in rapid and drastic drinking water contamination.</p>
+    </div>
+
+    <div class="col-sm-4">
         <svg class="icon icon-envelope-o"><use xlink:href="#icon-envelope-o"></use></svg>
         <h3>Contact Us</h3>
         <ul>
@@ -49,29 +63,17 @@ layout: default
             {% if site.contact.email %}<li><strong>Email:</strong> {{ site.contact.email }}</li>{% endif %}
         </ul>
     </div>
-    <div class="col-sm-4">
-        <svg class="icon icon-quote-left"><use xlink:href="#icon-clock-o"></use></svg>
-        <h3>Learn More About Lead Contamination</h3>
-        <p><a href="https://www.epa.gov/your-drinking-water/basic-information-about-lead-drinking-water#getinto">According the EPA</p>, homes built before 1986 are more likely to have lead in their water fixtures. As the Nation witnessed in Flint, MI, in 2016, pipe corrosion can result in rapid and drastic drinking water contamination.</p>
-    </div>
-    <div class="col-sm-4">
-        <svg class="icon icon-map-marker"><use xlink:href="#icon-map-marker"></use></svg>
-        <h3>Location</h3>
-            <p>
-                {{ site.contact.address }}
-            </p>
-    </div>
 </div>
 <!-- End 3 columns -->
 
 <!-- Start About -->
-<div id="contanimation" class="about">
+<div id="services" class="about">
     <div class="container-fluid">
-        <h2 class="section-title">About Lead Contamination</h2>
+        <h2 class="section-title">Our Services</h2>
 
         <div class="row">
             <div class="col-sm-6">
-                <h2>We will inspect your home pipes for lead contanimation</h2>
+                <h2>We will inspect your home pipes for lead contamination</h2>
                 <p>Lead can be found in some metal water taps, interior water pipes, or pipes connecting a house to the main water pipe in the street. Lead found in tap water usually comes from the corrosion of older fixtures or from the solder that connects pipes. When water sits in leaded pipes for several hours, lead can leach into the water supply.</p>
 
                 <div class="media">
@@ -115,10 +117,38 @@ layout: default
 </div>
 <!-- End About -->
 
+<!-- Start Testimonials -->
+<div id="news" class="testimonials parallax" style="background-image: url('{{ site.baseurl }}/img/{{ site.testimonials.testimonials_img }}');">
+    <div class="overlay-container">
+        <div class="overlay"></div>
+        <div class="container-fluid">
+            <div id="testimonial-carousel">
+                {% for article in site.data.articles %}
+                    <div class="testimonial-item">
+                        <!-- <svg class="icon icon-quote-left"><use xlink:href="#icon-quote-left"></use></svg> -->
+                        <blockquote>
+                            <p>"{{ article.excerpt }}"</p>
+                            <footer>
+                                <a href="{{ article.url }}" target="_blank" style="color: #fff;">
+                                {{ article.title }}
+                                <small>
+                                    {{ article.publication }}, {{ article.date }}
+                                </small>
+                                </a>
+                            </footer>
+                        </blockquote>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Testimonials -->
+
 <!-- Start Treatments -->
-<div id="services" class="treatments">
+<div id="treatments" class="treatments">
     <div class="container-fluid">
-        <h2 class="section-title">Services</h2>
+        <h2 class="section-title">We Provide</h2>
 
         <div class="row">
             {% for service in site.data.services %}
@@ -156,30 +186,6 @@ layout: default
     </div>
 </div>
 <!-- End Our team -->
-
-<!-- Start Testimonials -->
-<div id="testimonials" class="testimonials parallax" style="background-image: url('{{ site.baseurl }}/img/{{ site.testimonials.testimonials_img }}');">
-    <div class="overlay-container">
-        <div class="overlay"></div>
-        <div class="container-fluid">
-            <div id="testimonial-carousel">
-                {% for testimonial in site.data.testimonials %}
-                    <div class="testimonial-item">
-                        <svg class="icon icon-quote-left"><use xlink:href="#icon-quote-left"></use></svg>
-                        <blockquote>
-                            <p>{{ testimonial.description }}</p>
-                            <footer>
-                                {{ testimonial.name }}
-                                <small>{{ testimonial.title }}</small>
-                            </footer>
-                        </blockquote>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Testimonials -->
 
 <!-- Start Map -->
 <div id="location" class="map" data-zoom="{{ site.map.zoom }}" data-address="{{ site.map.address }}" data-address-details="<img src='{{ site.map.address_details }}'>"></div>
