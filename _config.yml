@@ -13,7 +13,7 @@ markdown: kramdown
 hero: 
     hero_img: water-kitchen-black-design.jpg
     hero_title: Lead & Galvanized Pipe Inspection
-    hero_description: Schedule an inspection of your home's pipes, to keep your family safe from lead contamination and in line with new, better water standards.
+    hero_description: We specialize in bringing homes built before 1986 in line with today's improved water standards.
 
 # Contact form
 api_token: # Enter API token here
