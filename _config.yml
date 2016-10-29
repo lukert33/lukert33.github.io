@@ -4,6 +4,7 @@ description: "Schedule an inspection of your home's pipes, to keep your family s
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the name of your domain
 logo_url: img/logo.png
+simpleform_token: cfc3d85a8cba5f06544f0cdb7a214745
 
 permalink: pretty
 markdown: kramdown
